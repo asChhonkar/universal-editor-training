@@ -158,7 +158,7 @@
           }
         },
         {
-          "title": "Quote",
+          "title": "Enhanced Quote Block",
           "id": "quote",
           "plugins": {
             "xwalk": {
@@ -167,8 +167,9 @@
                 "template": {
                   "name": "Quote",
                   "model": "quote",
-                  "quote": "<p>Welcome to the EDS - Universal Editor Training!</p>",
-                  "author": "Biff Tannen"
+                  "quote": "<p>Innovation distinguishes between a leader and a follower!</p>",
+                  "author": "Arvind Srinivasan",
+                  "classes": "bg-highlight"
                 }
               }
             }

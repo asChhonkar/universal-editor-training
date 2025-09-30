@@ -1,61 +1,159 @@
-.block.quote {
-    background-color: #ccc;
-    padding: 0 0 24px;
-    display: flex;
-    flex-direction: column;
-    margin: 1rem 0;
+/* Enhanced Quote Block Styles */
+.block .quote {
+    --quote-bg: #f8f9fa;
+    --quote-border: #e9ecef;
+    --quote-text: #212529;
+    --quote-accent: #0066cc;
+    --quote-shadow: rgba(0, 0, 0, 0.1);
+    background-color: var(--quote-bg);
+    border-left: 4px solid var(--quote-accent);
+    margin: 2rem 0;
+    padding: 2rem;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 2px 8px var(--quote-shadow);
+    font-family: Georgia, 'Times New Roman', serif;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
 }
 
-.block.quote blockquote {
-    margin: 16px;
-    text-indent: 0;
+.block .quote.animate-in {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.block.quote>div:last-child>div {
-    margin: 0 16px;
-    font-size: small;
+.block .quote:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px var(--quote-shadow);
+}
+
+.block .quote blockquote {
+    margin: 0 0 1.5rem 0;
+    font-size: 1.25rem;
+    line-height: 1.6;
     font-style: italic;
+    color: var(--quote-text);
     position: relative;
 }
 
-.block.quote>div:last-child>div::after {
-    content: "";
-    display: block;
+.block .quote blockquote::before {
+    content: '"';
+    font-size: 4rem;
+    color: var(--quote-accent);
     position: absolute;
-    left: 0;
-    bottom: -8px;
-    height: 5px;
-    width: 30px;
-    background-color: darkgray;
+    left: -20px;
+    top: -10px;
+    line-height: 1;
+    opacity: 0.3;
 }
 
-.block.quote {
-    background-color: #ccc;
-    padding: 0 0 24px;
-    display: flex;
-    flex-direction: column;
-    margin: 1rem 0;
+.block .quote footer {
+    margin-top: 1rem;
+    text-align: right;
 }
 
-.block.quote blockquote {
-    margin: 16px;
-    text-indent: 0;
-}
-
-.block.quote>div:last-child>div {
-    margin: 0 16px;
-    font-size: small;
-    font-style: italic;
+.block .quote cite {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--quote-accent);
+    font-style: normal;
     position: relative;
 }
 
-.block.quote>div:last-child>div::after {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 0;
-    bottom: -8px;
-    height: 5px;
-    width: 30px;
-    background-color: darkgray;
+.block .quote cite::before {
+    content: '— ';
+    margin-right: 0.5rem;
+}
+
+.block .quote .author-title {
+    font-weight: 400;
+    color: #6c757d;
+    font-size: 0.875rem;
+}
+
+/* Style Variants */
+.block .quote.bg-highlight {
+    --quote-bg: #fff3cd;
+    --quote-border: #ffc107;
+    --quote-accent: #f57c00;
+}
+
+.block .quote.minimal {
+    background: none;
+    border: none;
+    border-left: 2px solid var(--quote-accent);
+    box-shadow: none;
+    padding: 1rem 1.5rem;
+}
+
+.block .quote.large-format {
+    padding: 3rem;
+    text-align: center;
+}
+
+.block .quote.large-format blockquote {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.block .quote.large-format footer {
+    text-align: center;
+}
+
+/* Responsive Design */
+.block .quote.mobile-layout {
+    margin: 1rem 0;
+    padding: 1.5rem;
+    border-radius: 0 6px 6px 0;
+}
+
+.block .quote.mobile-layout blockquote {
+    font-size: 1.125rem;
+}
+
+.block .quote.mobile-layout blockquote::before {
+    font-size: 3rem;
+    left: -15px;
+    top: -5px;
+}
+
+@media (max-width: 768px) {
+    .block .quote {
+        margin: 1rem -1rem;
+        border-radius: 0;
+    }
+
+    .block .quote.large-format {
+        padding: 2rem 1.5rem;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .block .quote {
+        --quote-bg: #1a1a1a;
+        --quote-border: #333;
+        --quote-text: #e9ecef;
+        --quote-accent: #4dabf7;
+        --quote-shadow: rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .block .quote {
+        border-width: 6px;
+        --quote-shadow: rgba(0, 0, 0, 0.5);
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .block .quote {
+        transition: none;
+    }
+
+    .block .quote:hover {
+        transform: none;
+    }
 }

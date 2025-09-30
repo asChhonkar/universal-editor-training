@@ -222,35 +222,51 @@
         "component": "richtext",
         "name": "quote",
         "value": "",
-        "label": "Quote",
-        "valueType": "string"
+        "label": "Quote Content",
+        "description": "The main quote text with rich formatting support",
+        "valueType": "string",
+        "required": true
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "author",
-        "label": "Author",
+        "label": "Quote Author",
+        "description": "Name of the person who said the quote",
+        "value": "",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "authorTitle",
+        "label": "Author Title",
+        "description": "Professional title or role of the author",
         "value": ""
       },
       {
         "component": "select",
         "name": "classes",
         "value": "",
-        "label": "Background Color",
-        "description": "The quote background color",
+        "label": "Quote Style",
+        "description": "Visual style variant for the quote block",
         "valueType": "string",
         "options": [
           {
-            "name": "Red",
-            "value": "bg-red"
+            "name": "Default",
+            "value": ""
           },
           {
-            "name": "Green",
-            "value": "bg-green"
+            "name": "Highlighted",
+            "value": "bg-highlight"
           },
           {
-            "name": "Blue",
-            "value": "bg-blue"
+            "name": "Minimal",
+            "value": "minimal"
+          },
+          {
+            "name": "Large Format",
+            "value": "large-format"
           }
         ]
       }
